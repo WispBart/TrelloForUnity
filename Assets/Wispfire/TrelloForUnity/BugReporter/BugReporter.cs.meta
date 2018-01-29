@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0579d1cd89cd1714181fd232caf1761e
+timeCreated: 1485858906
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ReportInterface: {instanceID: 0}
+  - GameSettings: {fileID: 11400000, guid: 8bf6b74abf0757c469781a51ec21e26a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
