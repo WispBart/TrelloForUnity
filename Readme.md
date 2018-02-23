@@ -60,6 +60,9 @@ Hit play and then F8 to open the bug reporter (hotkey can be configured on the B
 
 <img src ="Docs/TrelloAndTrelloTester.png" />
 
+### Compatibility ###
+TrelloForUnity has been developed on Unity 2017.1 and tested on 2017.1 through 2017.3 and built for PC, Mac and Linux. Other versions may work, but are not guaranteed to. 
+
 # License
 Copyright 2018 Wispfire
 
