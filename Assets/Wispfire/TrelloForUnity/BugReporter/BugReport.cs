@@ -57,7 +57,6 @@ namespace Wispfire.BugReporting
                     return "xBoxOne";
                 case RuntimePlatform.PS4:
                     return "PS4";
-                case RuntimePlatform.OSXDashboardPlayer:
                 case RuntimePlatform.OSXPlayer:
                     return "macOS";                  
                 case RuntimePlatform.LinuxPlayer:

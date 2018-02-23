@@ -17,11 +17,21 @@ namespace Wispfire.TrelloForUnity
         private IEnumerator PutTrelloObjectRoutine(string URL, WWWForm data)
         {
             UnityWebRequest sendObject = UnityWebRequest.Post(URL, data);
+            sendObject.chunkedTransfer = false;
+            
+            #if UNITY_2017_2_OR_NEWER
+            yield return sendObject.SendWebRequest();
+            #else
             yield return sendObject.Send();
+            #endif
 
             if (!string.IsNullOrEmpty(sendObject.error))
             {
                 error = sendObject.error;
+                if (!string.IsNullOrEmpty(sendObject.downloadHandler.text))
+                {
+                    error += "\nServer returned: " + sendObject.downloadHandler.text;
+                }
                 yield break;
             }
             else if (string.IsNullOrEmpty(sendObject.downloadHandler.text))

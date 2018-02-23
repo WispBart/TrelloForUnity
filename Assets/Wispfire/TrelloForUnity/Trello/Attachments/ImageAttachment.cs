@@ -1,8 +1,9 @@
 using UnityEngine;
+using System;
 
 namespace Wispfire.TrelloForUnity
 {
-    [SerializeField]
+    [Serializable]
     public class ImageAttachment : BinaryAttachment
     {
         public string name;

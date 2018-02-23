@@ -47,11 +47,20 @@ namespace Wispfire.BugReporting
             {
                 var addText = Client.AddAttachmentToCard(CreateCard.Result.id, report.TextFiles[i].GetFilename(), report.TextFiles[i].GetBytes());
                 yield return addText;
+                if (!string.IsNullOrEmpty(addText.error))
+                {
+                    Debug.LogError("Adding text attachment to trello card failed with error: " + addText.error);
+                }
             }
+                        
             for (int i = 0; i < report.Screenshots.Count; i++)
             {
                 var addScreenshot = Client.AddAttachmentToCard(CreateCard.Result.id, report.Screenshots[i].GetFilename(), report.Screenshots[i].GetBytes());
                 yield return addScreenshot;
+                if (!string.IsNullOrEmpty(addScreenshot.error))
+                {
+                    Debug.LogError("Adding image attachment to trello card failed with error: " + addScreenshot.error);
+                }
             }
             if (OnDone != null) { OnDone(); }
         }
